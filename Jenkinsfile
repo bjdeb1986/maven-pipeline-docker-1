@@ -31,7 +31,12 @@ pipeline{
     }
     post{
         always{
-            cleanWs()
+            echo "Archive Artifacts"
+	    archiveArtifacts allowEmptyArchive: false, artifacts: 'target/*.jar', fingerprint: true, defaultExcludes: false, followSymlinks: false, onlyIfSuccessful: true
+        }
+        cleanup{
+	   echo "Workspace cleanup"
+ 	   cleanWs()
         }
     }
 }
