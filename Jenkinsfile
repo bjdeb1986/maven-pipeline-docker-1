@@ -6,7 +6,7 @@ pipeline{
         docker{
             image "maven:3.6.0-jdk-13"
             label "agent01"
-	    agrs "-v /home/jenkins-slave-01/maven:/var/maven/.m2 -e MAVEN_CONFIG=/var/maven/.m2"
+	    args "-v /home/jenkins-slave-01/maven:/var/maven/.m2 -e MAVEN_CONFIG=/var/maven/.m2"
         }
     }
     options{
