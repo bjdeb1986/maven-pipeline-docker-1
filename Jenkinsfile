@@ -5,7 +5,7 @@ pipeline{
     agent{
         docker{
             image "maven:3.6.0-jdk-13"
-            label "master"
+            label "main"
 	    args "-v /home/jenkins-controller-01/maven:/var/maven/.m2 -e MAVEN_CONFIG=/var/maven/.m2"
         }
     }
